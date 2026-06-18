@@ -4,7 +4,7 @@ A modern, responsive company portfolio website built for Tegbar Digital Solution
 
 ## 🚀 Live Demo
 
-[https://your-deployment-link-here.com](https://your-deployment-link-here.com)
+https://tegbar-digital-solution-website.netlify.app/
 
 ## 📌 Project Overview
 
@@ -50,5 +50,4 @@ Built as an internship project based on provided requirements for Tegbar Digital
 All portfolio items and blog content are sample/demonstration data used for UI purposes only.
 
 ## 👨‍💻 Developer
-
-Your Name Here
+Bamlak Chernet
