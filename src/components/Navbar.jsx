@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/T logo 3-03.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -28,26 +29,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-blue-900/10'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md shadow-blue-900/10`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#136088] to-[#008A5C] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <Zap size={20} className="text-white" />
-            </div>
-            <div className="leading-tight">
-              <span className="block text-lg font-bold text-[#0D1925]">Tegbar</span>
-              <span className="block text-xs font-medium text-[#136088] -mt-1">Digital Solution</span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img
+              src={logo}
+              alt="Tegbar Digital Solution"
+              className="h-10 w-auto object-contain rounded-lg bg-[#0D1925] px-2 py-1 group-hover:opacity-90 transition-opacity duration-300"
+            />
           </Link>
-
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link

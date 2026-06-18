@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Zap, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import logo from '../assets/T logo 3-03.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -27,14 +28,12 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#136088] to-[#008A5C] flex items-center justify-center">
-                <Zap size={20} className="text-white" />
-              </div>
-              <div className="leading-tight">
-                <span className="block text-base font-bold text-white">Tegbar</span>
-                <span className="block text-xs text-[#008A5C] -mt-0.5">Digital Solution</span>
-              </div>
+            <Link to="/" className="inline-block mb-4">
+              <img
+                src={logo}
+                alt="Tegbar Digital Solution"
+                className="h-12 w-auto object-contain rounded-lg"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Empowering Your Digital Future. We build powerful digital solutions that transform your business and drive real results.
