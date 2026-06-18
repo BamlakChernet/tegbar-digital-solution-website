@@ -51,4 +51,4 @@ All portfolio items and blog content are sample/demonstration data used for UI p
 
 ## 👨‍💻 Developer
 
-Your Name Here
+Bamlak Chernet
