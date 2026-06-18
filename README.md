@@ -1,16 +1,54 @@
-# React + Vite
+# Tegbar Digital Solution Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive company portfolio website built for Tegbar Digital Solution, a digital agency based in Addis Ababa, Ethiopia.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[https://your-deployment-link-here.com](https://your-deployment-link-here.com)
 
-## React Compiler
+## 📌 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is a multi-page business website designed to showcase services, build credibility, and allow potential clients to contact the company.
 
-## Expanding the ESLint configuration
+## 🧩 Pages Included
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Home
+- About Us
+- Services
+- Portfolio (Sample Projects)
+- Blog (Demo Content)
+- Contact Us
+
+## 🛠️ Tech Stack
+
+- React
+- React Router
+- Tailwind CSS
+- Vite
+
+## 🎨 Features
+
+- Fully responsive design
+- Contact form with validation
+- Portfolio filtering system
+- Blog search functionality
+- WhatsApp floating button
+- Modern UI with animations
+
+## 🎯 Purpose
+
+Built as an internship project based on provided requirements for Tegbar Digital Solution.
+
+## 📍 Company Info
+
+- Location: Addis Ababa, Ethiopia
+- Phone: +251 990 344 747
+- Email: Tegabrdigitalsolution@gmail.com
+
+## ⚠️ Note
+
+All portfolio items and blog content are sample/demonstration data used for UI purposes only.
+
+## 👨‍💻 Developer
+
+Your Name Here
