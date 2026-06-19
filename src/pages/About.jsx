@@ -89,12 +89,12 @@ export default function About() {
               </p>
             </div>
             {/* Vision */}
-            <div className="bg-[#0D1925] rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#008A5C] to-emerald-500 flex items-center justify-center mb-6 shadow-lg">
                 <Eye size={26} className="text-white" />
               </div>
-              <h3 className="text-2xl font-black text-white mb-3">Our Vision</h3>
-              <p className="text-gray-400 leading-relaxed">
+              <h3 className="text-2xl font-black text-[#0D1925] mb-3">Our Vision</h3>
+              <p className="text-gray-500 leading-relaxed">
                 To become the most trusted and impactful digital agency in East Africa — recognized for transforming businesses through technology, creativity, and strategy, while nurturing local digital talent and contributing to Ethiopia's thriving tech ecosystem.
               </p>
             </div>

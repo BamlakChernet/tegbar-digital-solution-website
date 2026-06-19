@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/T logo 3-03.png';
+import logoColored from '../assets/T logo 3-03.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -14,33 +14,27 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md shadow-blue-900/10`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md shadow-blue-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src={logo}
+              src={logoColored}
               alt="Tegbar Digital Solution"
-              className="h-10 w-auto object-contain rounded-lg bg-[#0D1925] px-2 py-1 group-hover:opacity-90 transition-opacity duration-300"
+              className="h-11 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
             />
           </Link>
+
+          {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -55,16 +49,6 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              to="/contact"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#136088] to-[#008A5C] text-white text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-md"
-            >
-              Get Started
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,14 +82,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="pt-2">
-            <Link
-              to="/contact"
-              className="block w-full text-center px-5 py-3 rounded-xl bg-gradient-to-r from-[#136088] to-[#008A5C] text-white text-sm font-semibold"
-            >
-              Get Started
-            </Link>
-          </div>
         </div>
       </div>
     </nav>
