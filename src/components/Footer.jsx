@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import logoColored from '../assets/T logo 3-03.png';
+import logoWhite from '../assets/logo-white.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <img
-                src={logoColored}
+                src={logoWhite}
                 alt="Tegbar Digital Solution"
                 className="h-14 w-auto object-contain"
                 style={{ aspectRatio: 'auto' }}

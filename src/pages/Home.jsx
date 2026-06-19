@@ -89,7 +89,13 @@ export default function Home() {
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#136088] to-[#008A5C] text-white font-semibold hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-900/30"
               >
-                Contact Us <ArrowRight size={18} />
+                Get Started <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200"
+              >
+                Contact Us
               </Link>
             </div>
 

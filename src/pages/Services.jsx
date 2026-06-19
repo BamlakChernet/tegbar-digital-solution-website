@@ -119,15 +119,13 @@ const process = [
 export default function Services() {
   return (
     <div>
-      {/* ── Page Hero + Process integrated ──────────────────────────────────── */}
-      <section className="relative bg-[#0D1925] pb-20 overflow-hidden">
+      {/* ── Page Hero ───────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#0D1925] py-28 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-[#136088]/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#008A5C]/15 rounded-full blur-3xl"></div>
         </div>
-
-        {/* Hero text */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#136088]/20 border border-[#136088]/30 text-[#008A5C] text-sm font-semibold mb-5">
             What We Do
           </span>
@@ -137,30 +135,6 @@ export default function Services() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Comprehensive digital solutions tailored to help your business grow, connect, and succeed in today's competitive landscape.
           </p>
-        </div>
-
-        {/* Process steps — integrated inside hero */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-3xl px-8 py-10">
-            <div className="text-center mb-8">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#136088]/30 border border-[#136088]/40 text-[#008A5C] text-xs font-semibold uppercase tracking-wider">How We Work</span>
-              <h2 className="text-2xl font-black text-white mt-3">Our Process</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {process.map(({ step, title, desc }, i) => (
-                <div key={step} className="relative text-center group">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#136088] to-[#008A5C] flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white font-black text-base">{step}</span>
-                  </div>
-                  {i < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-7 left-1/2 w-full h-0.5 bg-gradient-to-r from-[#136088]/50 to-transparent"></div>
-                  )}
-                  <h3 className="font-bold text-white text-base mb-1">{title}</h3>
-                  <p className="text-gray-400 text-xs leading-relaxed">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -199,6 +173,35 @@ export default function Services() {
                     Get a Quote <ChevronRight size={16} />
                   </Link>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Process Section ─────────────────────────────────────────────────── */}
+      <section className="section-padding bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-[#136088] text-sm font-semibold mb-4">How We Work</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0D1925] mb-4">Our Process</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              A clear, collaborative, and proven approach that delivers results on time and on budget.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {process.map(({ step, title, desc }, i) => (
+              <div key={step} className="relative text-center group">
+                {/* Connector line — rendered BEHIND the icon using z-0 */}
+                {i < process.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-[#136088]/40 to-[#008A5C]/20 z-0"></div>
+                )}
+                {/* Icon — sits ON TOP of the line using z-10 */}
+                <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#136088] to-[#008A5C] flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-black text-lg">{step}</span>
+                </div>
+                <h3 className="font-bold text-[#0D1925] text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
