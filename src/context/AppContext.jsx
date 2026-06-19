@@ -1,157 +1,177 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-
+﻿import { createContext, useContext, useState, useEffect } from 'react';
 const AppContext = createContext();
-
 export const translations = {
   en: {
-    // Navbar
-    nav_home: 'Home',
-    nav_about: 'About',
-    nav_services: 'Services',
-    nav_portfolio: 'Portfolio',
-    nav_blog: 'Blog',
-    nav_contact: 'Contact',
-
-    // Home Hero
-    hero_badge: 'Digital Agency in Ethiopia',
-    hero_title_1: 'Empowering Your',
-    hero_title_2: 'Digital Future',
-    hero_desc: 'We build powerful digital solutions — from stunning websites to comprehensive marketing strategies — that transform your business and drive real results.',
-    hero_btn_start: 'Get Started',
-    hero_btn_contact: 'Contact Us',
-    hero_badge_1: 'Professional Team',
-    hero_badge_2: 'Digital Services',
-    hero_badge_3: 'Local Expertise',
-    scroll_down: 'Scroll down',
-
-    // Why Choose Us
-    why_badge: 'Why Choose Us',
-    why_title: 'Your Trusted Digital Partner',
-    why_desc: 'We combine technical expertise with creative thinking to deliver digital solutions that truly make a difference for your business.',
-    why_1_title: 'Professional Solutions',
-    why_1_desc: 'We deliver well-crafted digital solutions built to a high standard for every client we work with.',
-    why_2_title: 'Client-Focused Approach',
-    why_2_desc: 'Your goals drive our work. We listen carefully and tailor every solution to your specific needs.',
-    why_3_title: 'Innovative Digital Services',
-    why_3_desc: 'We apply current technologies and creative thinking to build digital products that stand out.',
-    why_4_title: 'Reliable Support',
-    why_4_desc: 'We are committed to being available and responsive throughout every stage of your project.',
-
-    // Services Preview
-    services_badge: 'Our Services',
-    services_title: 'What We Offer',
-    services_desc: 'From concept to launch, we provide end-to-end digital services to help your business thrive online.',
-    services_btn: 'View All Services',
-    learn_more: 'Learn More',
-
-    // Portfolio Preview
-    portfolio_badge: 'Sample Work',
-    portfolio_title: 'Project Examples',
-    portfolio_desc: 'A selection of sample projects that illustrate the types of digital work we are capable of delivering.',
+    nav_home: 'Home', nav_about: 'About', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_blog: 'Blog', nav_contact: 'Contact',
+    hero_badge: 'Digital Agency in Ethiopia', hero_title_1: 'Empowering Your', hero_title_2: 'Digital Future',
+    hero_desc: 'We build powerful digital solutions from stunning websites to comprehensive marketing strategies that transform your business.',
+    hero_btn_start: 'Get Started', hero_btn_contact: 'Contact Us', hero_badge_1: 'Professional Team', hero_badge_2: 'Digital Services', hero_badge_3: 'Local Expertise', scroll_down: 'Scroll down',
+    why_badge: 'Why Choose Us', why_title: 'Your Trusted Digital Partner', why_desc: 'We combine technical expertise with creative thinking to deliver solutions that make a difference.',
+    why_1_title: 'Professional Solutions', why_1_desc: 'We deliver well-crafted digital solutions built to a high standard for every client.',
+    why_2_title: 'Client-Focused Approach', why_2_desc: 'Your goals drive our work. We listen carefully and tailor every solution to your needs.',
+    why_3_title: 'Innovative Digital Services', why_3_desc: 'We apply current technologies and creative thinking to build digital products that stand out.',
+    why_4_title: 'Reliable Support', why_4_desc: 'We are committed to being available and responsive throughout every stage of your project.',
+    services_badge: 'Our Services', services_title: 'What We Offer', services_desc: 'From concept to launch, we provide end-to-end digital services to help your business thrive online.',
+    services_btn: 'View All Services', learn_more: 'Learn More', get_quote: 'Get a Quote',
+    portfolio_badge: 'Sample Work', portfolio_title: 'Project Examples', portfolio_desc: 'A selection of sample projects that illustrate the types of digital work we are capable of delivering.',
     portfolio_btn: 'View All Projects',
-
-    // CTA
-    cta_badge: 'Ready to Get Started?',
-    cta_title_1: "Let's Build Something",
-    cta_title_2: 'Amazing Together',
-    cta_desc: "Ready to transform your digital presence? Get in touch with our team and let's discuss how we can help your business grow.",
-    cta_contact: 'Contact Us',
-    cta_services: 'Explore Services',
-
-    // Footer
-    footer_desc: 'Empowering Your Digital Future. We build powerful digital solutions that transform your business and drive real results.',
-    footer_quick: 'Quick Links',
-    footer_services: 'Services',
-    footer_contact: 'Contact Us',
-    footer_copyright: 'Tegbar Digital Solution. All rights reserved.',
-    footer_slogan: 'Empowering Your Digital Future — Addis Ababa, Ethiopia',
+    cta_badge: 'Ready to Get Started?', cta_title_1: "Let's Build Something", cta_title_2: 'Amazing Together',
+    cta_desc: "Ready to transform your digital presence? Get in touch and let's discuss how we can help your business grow.",
+    cta_contact: 'Contact Us', cta_services: 'Explore Services',
+    footer_desc: 'Empowering Your Digital Future. We build powerful digital solutions that transform your business.', footer_quick: 'Quick Links', footer_services: 'Services', footer_contact: 'Contact Us',
+    footer_copyright: 'Tegbar Digital Solution. All rights reserved.', footer_slogan: 'Empowering Your Digital Future - Addis Ababa, Ethiopia',
+    about_badge: 'About Us', about_title: 'Who We Are', about_subtitle: 'We are a passionate team of digital experts committed to helping businesses grow and succeed.',
+    about_who_badge: 'Who We Are', about_who_title: 'Building Digital Excellence',
+    about_p1: 'Tegbar Digital Solution is a digital agency based in Addis Ababa, Ethiopia, dedicated to helping businesses and organizations establish a strong online presence.',
+    about_p2: 'We specialize in website development, graphic design, digital marketing, branding, social media management, and e-commerce solutions.',
+    about_bullet1: 'Based in Addis Ababa, Ethiopia', about_bullet2: 'Full-service digital agency', about_bullet3: 'Serving businesses and organizations', about_bullet4: 'Focused on innovation and quality',
+    mission_title: 'Our Mission', mission_text: 'To empower businesses and organizations across Ethiopia and beyond with innovative, accessible, and results-driven digital solutions that accelerate growth.',
+    vision_title: 'Our Vision', vision_text: "To become the most trusted and impactful digital agency in East Africa recognized for transforming businesses through technology, creativity, and strategy.",
+    values_badge: 'What Drives Us', values_title: 'Our Core Values', values_desc: 'These principles guide every decision we make and every project we take on.',
+    val_1_title: 'Integrity', val_1_desc: 'We operate with full transparency and honesty in every client relationship and project we undertake.',
+    val_2_title: 'Innovation', val_2_desc: 'We constantly explore new ideas and technologies to deliver cutting-edge solutions for our clients.',
+    val_3_title: 'Excellence', val_3_desc: 'We set the bar high and strive to exceed expectations in the quality of every deliverable.',
+    val_4_title: 'Partnership', val_4_desc: 'We treat every client as a long-term partner, invested in their success as much as our own.',
+    val_5_title: 'Collaboration', val_5_desc: 'Great results come from great teamwork. We foster a culture of open communication and shared vision.',
+    val_6_title: 'Impact', val_6_desc: 'Every project we take on is an opportunity to create meaningful impact for our clients and community.',
+    team_badge: 'The People Behind The Work', team_title: 'Our Team',
+    team_text: 'Our team consists of dedicated digital professionals committed to helping businesses and organizations build a strong online presence through innovative digital solutions.',
+    about_cta_title: 'Ready to Work With Us?', about_cta_desc: "Let's discuss your project and create something amazing together.", get_in_touch: 'Get In Touch',
+    srv_badge: 'What We Do', srv_title: 'Our Services', srv_subtitle: "Comprehensive digital solutions tailored to help your business grow, connect, and succeed.",
+    srv_process_badge: 'How We Work', srv_process_title: 'Our Process', srv_process_desc: 'A clear, collaborative, and proven approach that delivers results on time and on budget.',
+    proc_1_title: 'Discovery', proc_1_desc: 'We learn about your business, goals, and target audience to align our strategy.',
+    proc_2_title: 'Strategy', proc_2_desc: 'We create a tailored plan with clear milestones, timelines, and deliverables.',
+    proc_3_title: 'Design & Build', proc_3_desc: 'Our team executes the plan with precision, creativity, and attention to detail.',
+    proc_4_title: 'Review & Launch', proc_4_desc: 'We review, test, refine, and then launch your project with full support.',
+    pillar_1_title: 'Fast Turnaround', pillar_1_desc: 'We deliver projects on time without compromising quality.',
+    pillar_2_title: 'Quality Guaranteed', pillar_2_desc: 'Every project undergoes rigorous quality checks before delivery.',
+    pillar_3_title: 'Ongoing Support', pillar_3_desc: '30-day post-launch support included with every project.',
+    srv_cta_title: 'Ready to Get Started?', srv_cta_desc: "Tell us about your project and let's create something extraordinary together.", start_project: 'Start a Project',
+    port_badge: 'Project Examples', port_title: 'Sample Projects', port_subtitle: 'The following examples showcase the types of projects and capabilities we offer.',
+    port_demo_note: 'These are demonstration projects, not client work', port_no_results: 'No projects found in this category.',
+    port_example_badge: 'Example', port_example_title: 'Sample Project Walkthrough', port_example_note: 'This example illustrates the kind of results we aim to achieve for our clients.',
+    port_cs_category: 'Web Development', port_cs_title: 'Restaurant Website - Full Case Study',
+    port_cs_desc: 'This example demonstrates how a restaurant website project could be structured featuring a custom reservation system, SEO-optimized pages, and mobile-first responsive design.',
+    port_approach: 'Approach', port_experience: 'Experience', port_process: 'Development Process',
+    port_modern: 'Modern Design', port_friendly: 'User-Friendly', port_professional: 'Professional',
+    start_similar: 'Start a Similar Project', port_cta_title: 'Want to Be Our Next Success Story?',
+    port_cta_desc: "Let's work together to create something that truly represents your brand.", start_your_project: 'Start Your Project',
+    blog_badge: 'Knowledge Hub', blog_title: 'Blog & Insights', blog_subtitle: 'Expert articles on digital marketing, branding, web development, and growing your business online.',
+    blog_search: 'Search articles...', blog_featured_title: 'Featured Article', blog_more_title: 'More Articles',
+    blog_demo_note: 'These articles are sample content created for demonstration purposes.',
+    blog_no_results: 'No articles found for your search.', blog_read_more: 'Read More', blog_show_less: 'Show Less',
+    blog_read_full: 'Read Full Article', blog_loop_title: 'Stay in the Loop',
+    blog_loop_desc: 'Get the latest digital tips and insights delivered to your inbox.',
+    contact_badge: 'Get In Touch', contact_title: 'Contact Us', contact_subtitle: 'Have a project in mind? We would love to hear about it. Send us a message and we will get back to you shortly.',
+    contact_lets_talk: "Let's Talk", contact_lets_talk_desc: 'Whether you are ready to start a project or just want to explore ideas, our team is here to help.',
+    contact_phone_label: 'Phone', contact_phone_desc: 'Mon-Sat, 8am-6pm EAT',
+    contact_email_label: 'Email', contact_email_desc: 'We reply within 24 hours',
+    contact_location_label: 'Location', contact_location_desc: 'Available for in-person meetings',
+    form_title: 'Send Us a Message', form_name: 'Full Name', form_name_placeholder: 'Your full name',
+    form_email: 'Email Address', form_email_placeholder: 'your@email.com',
+    form_subject: 'Subject', form_subject_placeholder: 'What is this about?',
+    form_message: 'Message', form_message_placeholder: 'Tell us about your project...',
+    form_send: 'Send Message', form_sending: 'Sending...',
+    form_success_title: 'Message Sent!', form_success_desc: 'Thank you for reaching out. We will get back to you within 24 hours.',
+    form_send_another: 'Send Another Message',
+    err_name: 'Full name is required.', err_email: 'Email is required.', err_email_invalid: 'Enter a valid email.', err_subject: 'Subject is required.', err_message: 'Message is required.',
+    contact_city: 'Addis Ababa, Ethiopia', contact_city_sub: 'Find us in the heart of the city',
+    sample_badge: 'Sample',
   },
   am: {
-    // Navbar
-    nav_home: 'መነሻ',
-    nav_about: 'ስለ እኛ',
-    nav_services: 'አገልግሎቶች',
-    nav_portfolio: 'ፖርትፎሊዮ',
-    nav_blog: 'ብሎግ',
-    nav_contact: 'አግኙን',
-
-    // Home Hero
-    hero_badge: 'በኢትዮጵያ ዲጂታል ኤጄንሲ',
-    hero_title_1: 'ዲጂታል ወደፊቱን',
-    hero_title_2: 'ኃይለኛ ያድርጉ',
-    hero_desc: 'ከድንቅ ድረ-ገጾች እስከ ሁሉን አቀፍ የግብይት ስልቶች — ንግድዎን የሚለውጡ ኃይለኛ ዲጂታል መፍትሄዎችን እንሰራለን።',
-    hero_btn_start: 'ጀምር',
-    hero_btn_contact: 'አግኙን',
-    hero_badge_1: 'ሙያዊ ቡድን',
-    hero_badge_2: 'ዲጂታል አገልግሎቶች',
-    hero_badge_3: 'የሀገር ውስጥ ልምድ',
-    scroll_down: 'ወደ ታች ሸብልሉ',
-
-    // Why Choose Us
-    why_badge: 'ለምን እኛን ይምረጡ',
-    why_title: 'የሚታመን ዲጂታል አጋርዎ',
-    why_desc: 'ለንግድዎ እውነተኛ ልዩነት የሚፈጥሩ ዲጂታል መፍትሄዎችን ለማቅረብ ቴክኒካዊ ችሎታን ከፈጠራ አስተሳሰብ ጋር እናጣምራለን።',
-    why_1_title: 'ሙያዊ መፍትሄዎች',
-    why_1_desc: 'ለእያንዳንዱ ደንበኛ ከፍተኛ ጥራት ያለው ዲጂታል መፍትሄ እናቀርባለን።',
-    why_2_title: 'ደንበኛ ተኮር አቀራረብ',
-    why_2_desc: 'ዓላማዎ ሥራችንን ይመራዋል። በጥንቃቄ እናደምጣለን እና እያንዳንዱን መፍትሄ ለፍላጎትዎ እናዘጋጃለን።',
-    why_3_title: 'ፈጠራ ዲጂታል አገልግሎቶች',
-    why_4_title: 'አስተማማኝ ድጋፍ',
-    why_3_desc: 'የሚለዩ ዲጂታል ምርቶችን ለመገንባት የዘመናዊ ቴክኖሎጂ እና ፈጠራ አስተሳሰብ እንጠቀማለን።',
-    why_4_desc: 'በፕሮጀክትዎ በሁሉም ደረጃ ሁልጊዜ ዝግጁ እና ምላሽ ሰጪ ለመሆን ቁርጠኛ ነን።',
-
-    // Services Preview
-    services_badge: 'አገልግሎቶቻችን',
-    services_title: 'የምናቀርበው',
-    services_desc: 'ከፅንሰ ሃሳብ እስከ ጅምር፣ ንግድዎ በኦንላይን ለማደግ ሁሉን አቀፍ ዲጂታል አገልግሎቶችን እናቀርባለን።',
-    services_btn: 'ሁሉንም አገልግሎቶች ይመልከቱ',
-    learn_more: 'ተጨማሪ ይወቁ',
-
-    // Portfolio Preview
-    portfolio_badge: 'ናሙና ሥራዎች',
-    portfolio_title: 'የፕሮጀክት ምሳሌዎች',
-    portfolio_desc: 'ማቅረብ የምንችለውን የዲጂታል ሥራ ዓይነቶች የሚያሳዩ ናሙና ፕሮጀክቶች።',
+    nav_home: 'መነሻ', nav_about: 'ስለ እኛ', nav_services: 'አገልግሎቶች', nav_portfolio: 'ፖርትፎሊዮ', nav_blog: 'ብሎግ', nav_contact: 'አግኙን',
+    hero_badge: 'በኢትዮጵያ ዲጂታል ኤጄንሲ', hero_title_1: 'ዲጂታል ወደፊቱን', hero_title_2: 'ኃይለኛ ያድርጉ',
+    hero_desc: 'ከድንቅ ድረ-ገጾች እስከ ሁሉን አቀፍ የግብይት ስልቶች - ንግድዎን የሚለውጡ ኃይለኛ ዲጂታል መፍትሄዎችን እንሰራለን',
+    hero_btn_start: 'ጀምር', hero_btn_contact: 'አግኙን', hero_badge_1: 'ሙያዊ ቡድን', hero_badge_2: 'ዲጂታል አገልግሎቶች', hero_badge_3: 'የሀገር ውስጥ ልምድ', scroll_down: 'ወደ ታች ሸብልሉ',
+    why_badge: 'ለምን እኛን ይምረጡ', why_title: 'የሚታመን ዲጂታል አጋርዎ', why_desc: 'ለንግድዎ እውነተኛ ልዩነት የሚፈጥሩ ዲጂታል መፍትሄዎችን ለማቅረብ ቴክኒካዊ ችሎታን ከፈጠራ አስተሳሰብ ጋር እናጣምራለን',
+    why_1_title: 'ሙያዊ መፍትሄዎች', why_1_desc: 'ለእያንዳንዱ ደንበኛ ከፍተኛ ጥራት ያለው ዲጂታል መፍትሄ እናቀርባለን',
+    why_2_title: 'ደንበኛ ተኮር አቀራረብ', why_2_desc: 'ዓላማዎ ሥራችንን ይመራዋል በጥንቃቄ እናደምጣለን እና እያንዳንዱን መፍትሄ ለፍላጎትዎ እናዘጋጃለን',
+    why_3_title: 'ፈጠራ ዲጂታል አገልግሎቶች', why_3_desc: 'የሚለዩ ዲጂታል ምርቶችን ለመገንባት የዘመናዊ ቴክኖሎጂ እና ፈጠራ አስተሳሰብ እንጠቀማለን',
+    why_4_title: 'አስተማማኝ ድጋፍ', why_4_desc: 'በፕሮጀክትዎ በሁሉም ደረጃ ሁልጊዜ ዝግጁ እና ምላሽ ሰጪ ለመሆን ቁርጠኛ ነን',
+    services_badge: 'አገልግሎቶቻችን', services_title: 'የምናቀርበው', services_desc: 'ከፅንሰ ሃሳብ እስከ ጅምር ንግድዎ በኦንላይን ለማደግ ሁሉን አቀፍ ዲጂታል አገልግሎቶችን እናቀርባለን',
+    services_btn: 'ሁሉንም አገልግሎቶች ይመልከቱ', learn_more: 'ተጨማሪ ይወቁ', get_quote: 'ዋጋ ይጠይቁ',
+    portfolio_badge: 'ናሙና ሥራዎች', portfolio_title: 'የፕሮጀክት ምሳሌዎች', portfolio_desc: 'ማቅረብ የምንችለውን የዲጂታል ሥራ ዓይነቶች የሚያሳዩ ናሙና ፕሮጀክቶች',
     portfolio_btn: 'ሁሉንም ፕሮጀክቶች ይመልከቱ',
-
-    // CTA
-    cta_badge: 'ለመጀመር ዝግጁ ነዎት?',
-    cta_title_1: 'አስደናቂ ነገር',
-    cta_title_2: 'አብረን እንስራ',
-    cta_desc: 'ዲጂታል ተገኝነትዎን ለመቀየር ዝግጁ ነዎት? ቡድናችን ያግኙ።',
-    cta_contact: 'አግኙን',
-    cta_services: 'አገልግሎቶችን ያስሱ',
-
-    // Footer
-    footer_desc: 'ዲጂታል ወደፊቱን ኃይለኛ ያድርጉ። ንግድዎን የሚለውጡ ኃይለኛ ዲጂታል መፍትሄዎችን እንሰራለን።',
-    footer_quick: 'ፈጣን አገናኞች',
-    footer_services: 'አገልግሎቶች',
-    footer_contact: 'አግኙን',
-    footer_copyright: 'ቴግባር ዲጂታል ሶሉሽን። መብቱ በሕግ የተጠበቀ ነው።',
-    footer_slogan: 'ዲጂታል ወደፊቱን ኃይለኛ ያድርጉ — አዲስ አበባ፣ ኢትዮጵያ',
-  },
+    cta_badge: 'ለመጀመር ዝግጁ ነዎት?', cta_title_1: 'አስደናቂ ነገር', cta_title_2: 'አብረን እንስራ',
+    cta_desc: 'ዲጂታል ተገኝነትዎን ለመቀየር ዝግጁ ነዎት? ቡድናችን ያግኙ',
+    cta_contact: 'አግኙን', cta_services: 'አገልግሎቶችን ያስሱ',
+    footer_desc: 'ዲጂታል ወደፊቱን ኃይለኛ ያድርጉ ንግድዎን የሚለውጡ ኃይለኛ ዲጂታል መፍትሄዎችን እንሰራለን',
+    footer_quick: 'ፈጣን አገናኞች', footer_services: 'አገልግሎቶች', footer_contact: 'አግኙን',
+    footer_copyright: 'ቴግባር ዲጂታል ሶሉሽን መብቱ በሕግ የተጠበቀ ነው', footer_slogan: 'ዲጂታል ወደፊቱን ኃይለኛ ያድርጉ - አዲስ አበባ ኢትዮጵያ',
+    about_badge: 'ስለ እኛ', about_title: 'እነማን ነን', about_subtitle: 'ንግዶች እንዲያድጉ እና በዲጂታል ምህዳር ውስጥ እንዲሳካ ለማገዝ ቁርጠኛ የሆነ ሙያዊ ቡድን ነን',
+    about_who_badge: 'እነማን ነን', about_who_title: 'ዲጂታል ብቃትን እየገነባን',
+    about_p1: 'ቴግባር ዲጂታል ሶሉሽን በአዲስ አበባ ኢትዮጵያ የሚገኝ ዲጂታል ኤጄንሲ ሲሆን ንግዶችና ድርጅቶች ጠንካራ የኦንላይን ተገኝነት እንዲያገኙ ለማገዝ ቁርጠኛ ነው',
+    about_p2: 'ድረ-ገጽ ልማት ግራፊክ ዲዛይን ዲጂታል ማርኬቲንግ ብራንዲንግ የሶሻል ሚዲያ አስተዳደር እና ኢ-ኮሜርስ መፍትሄዎች ላይ ልዩ ትኩረት እናደርጋለን',
+    about_bullet1: 'በአዲስ አበባ ኢትዮጵያ', about_bullet2: 'ሙሉ አገልግሎት ዲጂታል ኤጄንሲ', about_bullet3: 'ንግዶችና ድርጅቶችን ማገልገል', about_bullet4: 'ፈጠራ እና ጥራት ላይ ያተኮረ',
+    mission_title: 'ተልዕኮአችን', mission_text: 'በኢትዮጵያ እና ከዚያ አልፎ ያሉ ንግዶችና ድርጅቶችን በፈጠራ ተደራሽ እና ውጤት ተኮር ዲጂታል መፍትሄዎች ማበቃት',
+    vision_title: 'ራዕያችን', vision_text: 'በምስራቅ አፍሪካ ውስጥ እጅግ አስተማማኝ እና ተፅዕኖ ፈጣሪ ዲጂታል ኤጄንሲ መሆን',
+    values_badge: 'የሚነዳን', values_title: 'መሰረታዊ እሴቶቻችን', values_desc: 'እነዚህ መርሆዎች እያንዳንዱ ውሳኔ እና ፕሮጀክት ይመራሉ',
+    val_1_title: 'ታማኝነት', val_1_desc: 'በሁሉም የደንበኛ ግንኙነት እና ፕሮጀክት ሙሉ ግልፅነት እና ሐቀኝነት ይዘን እንሰራለን',
+    val_2_title: 'ፈጠራ', val_2_desc: 'ለደንበኞቻችን ዘመናዊ መፍትሄዎችን ለማቅረብ አዳዲስ ሃሳቦችን እና ቴክኖሎጂዎችን ሁልጊዜ እንፈልጋለን',
+    val_3_title: 'ብቃት', val_3_desc: 'ደረጃውን ከፍ አድርገን እያንዳንዱ ምርት ውስጥ ከጠበቃ ትእዛዝ ባሻገር ለመሄድ እንጥራለን',
+    val_4_title: 'አጋርነት', val_4_desc: 'እያንዳንዱን ደንበኛ ለረዥም ጊዜ አጋር አድርገን እናያቸዋለን',
+    val_5_title: 'ትብብር', val_5_desc: 'ታላቅ ውጤቶች ከታላቅ ቡድን ሥራ ይመጣሉ ክፍት ግንኙነት ባህልን እናበረታታለን',
+    val_6_title: 'ተፅዕኖ', val_6_desc: 'እያንዳንዱ ፕሮጀክት ለደንበኞቻችን እና ማህበረሰባችን ትርጉም ያለው ተፅዕኖ ለመፍጠር አጋጣሚ ነው',
+    team_badge: 'ሥራ ጀርባ ያሉ ሰዎች', team_title: 'ቡድናችን',
+    team_text: 'ቡድናችን ንግዶችና ድርጅቶች በፈጠራ ዲጂታል መፍትሄዎች ጠንካራ የኦንላይን ተገኝነት እንዲያገኙ ለማገዝ ቁርጠኛ የሆኑ ሙያዊ ዲጂታል ባለሙያዎችን ያቀፈ ነው',
+    about_cta_title: 'ለመስራት ዝግጁ ነዎት?', about_cta_desc: 'ፕሮጀክትዎን እንወያይ', get_in_touch: 'አግኙን',
+    srv_badge: 'የምናደርገው', srv_title: 'አገልግሎቶቻችን', srv_subtitle: 'ንግድዎ ዛሬ ውስብስብ ፉክክር ባለበት ምህዳር ውስጥ ለማደግ የሚያስፈልጉ ዲጂታል መፍትሄዎች',
+    srv_process_badge: 'እንዴት እንሰራለን', srv_process_title: 'ሂደታችን', srv_process_desc: 'በጊዜ እና በበጀት ውጤት የሚያስገኝ ግልፅ እና ትብብርን ያካተተ አቀራረብ',
+    proc_1_title: 'ግኝት', proc_1_desc: 'ስለ ንግድዎ ዓላማዎ እና ዒላማ ተደራሲዎ ስልትን ለማስተካከል እንማራለን',
+    proc_2_title: 'ስልት', proc_2_desc: 'ግልፅ ምዕራፎች የጊዜ ሰሌዳ እና ምርቶች ያሉት ዕቅድ እንፈጥራለን',
+    proc_3_title: 'ዲዛይን እና ግንባታ', proc_3_desc: 'ቡድናችን ዕቅዱን በትክክለኛነት ፈጠራ እና ዝርዝር ትኩረት ይተገብራል',
+    proc_4_title: 'ግምገማ እና ጅምር', proc_4_desc: 'እንገመግማለን እንፈትናለን እናሻሽላለን ከዚያ ሙሉ ድጋፍ ሰጥተን ፕሮጀክትዎን ስናጀምር',
+    pillar_1_title: 'ፈጣን አስረክቦ', pillar_1_desc: 'ጥራትንሳናጓድፍ ፕሮጀክቶቹን ወቅቱን ጠብቀን እናስረክባለን',
+    pillar_2_title: 'ጥራት ዋስትና', pillar_2_desc: 'እያንዳንዱ ፕሮጀክት ከማስረከቡ በፊት ጥብቅ የጥራት ምርመራ ያልፋል',
+    pillar_3_title: 'ቀጣይ ድጋፍ', pillar_3_desc: 'ከጅምር በኋላ 30 ቀን ድጋፍ ከእያንዳንዱ ፕሮጀክት ጋር ይካተታል',
+    srv_cta_title: 'ለመጀመር ዝግጁ ነዎት?', srv_cta_desc: 'ስለ ፕሮጀክትዎ ንገሩን', start_project: 'ፕሮጀክት ጀምር',
+    port_badge: 'የፕሮጀክት ምሳሌዎች', port_title: 'ናሙና ፕሮጀክቶች', port_subtitle: 'የምናቀርበውን የፕሮጀክቶች ዓይነቶች እና ችሎታ የሚያሳዩ ምሳሌዎች',
+    port_demo_note: 'እነዚህ የምርምር ፕሮጀክቶች ናቸው የደንበኛ ሥራ አይደሉም', port_no_results: 'በዚህ ምድብ ምንም ፕሮጀክቶች አልተገኙም',
+    port_example_badge: 'ምሳሌ', port_example_title: 'ናሙና ፕሮጀክት ማብራሪያ', port_example_note: 'ይህ ምሳሌ ለደንበኞቻችን ለማሳካት የምንፈልገውን ውጤት ያሳያል',
+    port_cs_category: 'ድረ-ገጽ ልማት', port_cs_title: 'የሬስቶራንት ድረ-ገጽ - ሙሉ ጥናት',
+    port_cs_desc: 'ይህ ምሳሌ የሬስቶራንት ድረ-ገጽ ፕሮጀክት እንዴት ሊዋቀር እንደሚችል ያሳያል',
+    port_approach: 'አቀራረብ', port_experience: 'ተሞክሮ', port_process: 'የልማት ሂደት',
+    port_modern: 'ዘመናዊ ዲዛይን', port_friendly: 'ቀላል ለተጠቃሚ', port_professional: 'ሙያዊ',
+    start_similar: 'ተመሳሳይ ፕሮጀክት ጀምር', port_cta_title: 'ቀጣዩ ስኬታማ ታሪካችን መሆን ይፈልጋሉ?',
+    port_cta_desc: 'ብራንድዎን የሚወክል ነገር አብረን እንፍጠር', start_your_project: 'ፕሮጀክትዎን ጀምሩ',
+    blog_badge: 'የዕውቀት ማዕከል', blog_title: 'ብሎግ እና ምልከታዎች', blog_subtitle: 'ስለ ዲጂታል ማርኬቲንግ ብራንዲንግ ድረ-ገጽ ልማት እና ንግድዎን ኦንላይን ለማሳደግ ምሁራዊ ጽሑፎች',
+    blog_search: 'ጽሑፎችን ይፈልጉ...', blog_featured_title: 'ዋና ጽሑፍ', blog_more_title: 'ተጨማሪ ጽሑፎች',
+    blog_demo_note: 'እነዚህ ጽሑፎች ለምርምር ዓላማ የተፈጠሩ ናሙና ይዘቶች ናቸው',
+    blog_no_results: 'ለፍለጋዎ ምንም ጽሑፎች አልተገኙም', blog_read_more: 'ተጨማሪ ያንብቡ', blog_show_less: 'ያነሱ ያሳዩ',
+    blog_read_full: 'ሙሉ ጽሑፍ ያንብቡ', blog_loop_title: 'ወቅቱን ጠብቀው ይቆዩ',
+    blog_loop_desc: 'የቅርብ ጊዜ ዲጂታል ምክሮችን እና ምልከታዎችን ወደ ኢሜሊዎ ያቀርቡ',
+    contact_badge: 'ያግኙን', contact_title: 'ያግኙን', contact_subtitle: 'ፕሮጀክት አለዎት? ስለ ፕሮጀክትዎ ንገሩን እና ቶሎ ምላሽ እናስኛለን',
+    contact_lets_talk: 'እናውጋ', contact_lets_talk_desc: 'ፕሮጀክት ለመጀመር ዝግጁ ቢሆኑም ሃሳቦችን ለማሰስ ብቻ ቢፈልጉም ቡድናችን ዝግጁ ነው',
+    contact_phone_label: 'ስልክ', contact_phone_desc: 'ሰኞ-ቅዳሜ ጥዋት 8 - ከሰዓት 6 EAT',
+    contact_email_label: 'ኢሜይል', contact_email_desc: 'ውስጥ 24 ሰዓት ምላሽ እንሰጣለን',
+    contact_location_label: 'አካባቢ', contact_location_desc: 'ለ対面 ስብሰባ ዝግጁ ነን',
+    form_title: 'መልዕክት ይላኩልን', form_name: 'ሙሉ ስም', form_name_placeholder: 'ሙሉ ስምዎን ያስገቡ',
+    form_email: 'ኢሜይል አድራሻ', form_email_placeholder: 'your@email.com',
+    form_subject: 'ርዕሰ ጉዳይ', form_subject_placeholder: 'ስለምን ነው?',
+    form_message: 'መልዕክት', form_message_placeholder: 'ስለ ፕሮጀክትዎ ይንገሩን...',
+    form_send: 'መልዕክት ላክ', form_sending: 'እየተላከ...',
+    form_success_title: 'መልዕክቱ ተልኳል!', form_success_desc: 'ስለ ደረሱን ምስጋናችንን ያቅርቡ ውስጥ 24 ሰዓት ምላሽ እናስኛለን',
+    form_send_another: 'ሌላ መልዕክት ላክ',
+    err_name: 'ሙሉ ስም ያስፈልጋል', err_email: 'ኢሜይል ያስፈልጋል', err_email_invalid: 'ትክክለኛ ኢሜይል ያስገቡ', err_subject: 'ርዕሰ ጉዳይ ያስፈልጋል', err_message: 'መልዕክት ያስፈልጋል',
+    contact_city: 'አዲስ አበባ ኢትዮጵያ', contact_city_sub: 'በከተማው ልብ ያግኙን',
+    sample_badge: 'ናሙና',
+  }
 };
-
 export function AppProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   const [lang, setLang] = useState('en');
-
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    if (darkMode) { document.documentElement.classList.add('dark'); }
+    else { document.documentElement.classList.remove('dark'); }
   }, [darkMode]);
-
   const t = (key) => translations[lang][key] || key;
-
   return (
     <AppContext.Provider value={{ darkMode, setDarkMode, lang, setLang, t }}>
       {children}
     </AppContext.Provider>
   );
 }
+export function useApp() { return useContext(AppContext); }
 
-export function useApp() {
-  return useContext(AppContext);
-}
+
+
