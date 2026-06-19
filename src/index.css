@@ -17,6 +17,44 @@
     font-family: 'Inter', system-ui, sans-serif;
     color: #0D1925;
     background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: #0a1628;
+    color: #e2e8f0;
+  }
+
+  html.dark .bg-white {
+    background-color: #0f1f35 !important;
+  }
+
+  html.dark .bg-gray-50 {
+    background-color: #0d1a2e !important;
+  }
+
+  html.dark .text-\[\#0D1925\] {
+    color: #e2e8f0 !important;
+  }
+
+  html.dark .text-gray-500 {
+    color: #94a3b8 !important;
+  }
+
+  html.dark .text-gray-600 {
+    color: #94a3b8 !important;
+  }
+
+  html.dark .border-gray-100 {
+    border-color: #1e3a5f !important;
+  }
+
+  html.dark .bg-blue-50 {
+    background-color: #0f2744 !important;
+  }
+
+  html.dark .bg-green-50 {
+    background-color: #062818 !important;
   }
 
   * {
