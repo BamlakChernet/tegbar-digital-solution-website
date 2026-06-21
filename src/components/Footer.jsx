@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import logoWhite from '../assets/logo-white.png';
+import logoLight from '../assets/logo-light.png';
 import { useApp } from '../context/AppContext';
 
 export default function Footer() {
@@ -32,14 +32,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <img
-                src={logoWhite}
+                src={logoLight}
                 alt="Tegbar Digital Solution"
-                className="h-14 w-auto"
-                style={{
-                  maxWidth: '180px',
-                  objectFit: 'contain',
-                  objectPosition: 'left center',
-                }}
+                style={{ height: '40px', width: 'auto', maxWidth: '180px', objectFit: 'contain' }}
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">{t('footer_desc')}</p>
