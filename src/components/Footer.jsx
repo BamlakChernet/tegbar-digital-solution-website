@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import logoColored from '../assets/T logo 3-03.png';
 import logoWhite from '../assets/logo-white.png';
 import { useApp } from '../context/AppContext';
 

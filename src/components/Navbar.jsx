@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, Languages } from 'lucide-react';
-import logoColored from '../assets/T logo 3-03.png';
 import logoWhite from '../assets/logo-white.png';
 import { useApp } from '../context/AppContext';
 
@@ -27,13 +26,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo — white version in dark mode, colored in light mode */}
+          {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src={darkMode ? logoWhite : logoColored}
+              src={logoWhite}
               alt="Tegbar Digital Solution"
               className="h-11 w-auto object-contain object-left group-hover:opacity-90 transition-all duration-300"
-              style={{ maxWidth: '160px' }}
+              style={{
+                maxWidth: '160px',
+                filter: darkMode ? 'none' : 'none',
+                borderRadius: '8px',
+                background: '#0D1925',
+                padding: '4px 8px',
+              }}
             />
           </Link>
 
