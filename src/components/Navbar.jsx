@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: t('nav_services'), path: '/services' },
     { name: t('nav_portfolio'), path: '/portfolio' },
     { name: t('nav_blog'), path: '/blog' },
-    { name: t('nav_contact'), path: '/contact' },
   ];
 
   useEffect(() => {
@@ -27,12 +26,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo */}
+          {/* Logo — white filter in dark mode */}
           <Link to="/" className="flex items-center group">
             <img
               src={logoColored}
               alt="Tegbar Digital Solution"
-              className="h-11 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+              className="h-11 w-auto object-contain group-hover:opacity-90 transition-all duration-300"
+              style={darkMode ? { filter: 'brightness(0) invert(1)' } : {}}
             />
           </Link>
 
@@ -55,8 +55,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Controls: Language + Dark Mode */}
+          {/* Right controls: Lang + Dark + Contact */}
           <div className="hidden md:flex items-center gap-2">
+
             {/* Language Toggle */}
             <button
               onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
@@ -83,6 +84,18 @@ export default function Navbar() {
             >
               {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
+
+            {/* Contact Us — glowing rectangular button */}
+            <Link
+              to="/contact"
+              className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                darkMode
+                  ? 'bg-gradient-to-r from-[#136088] to-[#008A5C] text-white shadow-[0_0_16px_2px_rgba(19,96,136,0.5)] hover:shadow-[0_0_24px_4px_rgba(0,138,92,0.6)] hover:opacity-90'
+                  : 'bg-gradient-to-r from-[#136088] to-[#008A5C] text-white shadow-[0_0_12px_2px_rgba(19,96,136,0.35)] hover:shadow-[0_0_20px_4px_rgba(0,138,92,0.45)] hover:opacity-90'
+              }`}
+            >
+              {t('nav_contact')}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,8 +127,17 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Mobile Contact button */}
+          <Link
+            to="/contact"
+            className="block w-full text-center px-5 py-3 rounded-lg bg-gradient-to-r from-[#136088] to-[#008A5C] text-white text-sm font-semibold shadow-[0_0_14px_2px_rgba(19,96,136,0.4)]"
+          >
+            {t('nav_contact')}
+          </Link>
+
           {/* Mobile controls */}
-          <div className="flex items-center gap-3 px-4 pt-3 border-t border-gray-100 dark:border-gray-700 mt-2">
+          <div className="flex items-center gap-3 px-4 pt-3 border-t mt-2" style={{ borderColor: darkMode ? '#374151' : '#f3f4f6' }}>
             <button
               onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold border transition-all ${darkMode ? 'border-gray-600 text-gray-300' : 'border-gray-200 text-gray-600'}`}
