@@ -26,18 +26,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo */}
+          {/* Logo — invert in light mode so black bg disappears on white navbar */}
           <Link to="/" className="flex items-center group">
             <img
               src={logoWhite}
               alt="Tegbar Digital Solution"
-              className="h-11 w-auto object-contain object-left group-hover:opacity-90 transition-all duration-300"
+              className="h-12 w-auto group-hover:opacity-90 transition-all duration-300"
               style={{
-                maxWidth: '160px',
-                filter: darkMode ? 'none' : 'none',
-                borderRadius: '8px',
-                background: '#0D1925',
-                padding: '4px 8px',
+                maxWidth: '180px',
+                objectFit: 'contain',
+                objectPosition: 'left center',
+                filter: darkMode ? 'none' : 'invert(1)',
               }}
             />
           </Link>

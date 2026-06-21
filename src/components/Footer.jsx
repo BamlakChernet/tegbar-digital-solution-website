@@ -34,8 +34,12 @@ export default function Footer() {
               <img
                 src={logoWhite}
                 alt="Tegbar Digital Solution"
-                className="h-14 w-auto object-contain object-left"
-                style={{ maxWidth: '180px' }}
+                className="h-14 w-auto"
+                style={{
+                  maxWidth: '180px',
+                  objectFit: 'contain',
+                  objectPosition: 'left center',
+                }}
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">{t('footer_desc')}</p>
@@ -95,8 +99,8 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} {t('footer_copyright')}</p>
-          <p className="text-gray-600 text-xs">{t('footer_slogan')}</p>
+          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} {t('footer_copyright')}</p>
+          <p className="text-gray-400 text-xs">{t('footer_slogan')}</p>
         </div>
       </div>
     </footer>
