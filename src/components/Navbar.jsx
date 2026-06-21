@@ -42,9 +42,8 @@ export default function Navbar() {
                 src={logo}
                 alt="Tegbar Digital Solution"
                 style={{
-                  height: '36px',
+                  height: '44px',
                   width: 'auto',
-                  maxWidth: '150px',
                   objectFit: 'contain',
                   display: 'block',
                 }}
