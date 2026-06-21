@@ -34,7 +34,13 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Tegbar Digital Solution"
-                style={{ height: '40px', width: 'auto', maxWidth: '180px', objectFit: 'contain' }}
+                style={{
+                  height: '36px',
+                  width: 'auto',
+                  maxWidth: '180px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">{t('footer_desc')}</p>

@@ -26,14 +26,31 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo — single asset, consistent across all themes */}
+          {/* Logo — dark background in light mode so white logo is always visible */}
           <Link to="/" className="flex items-center group">
-            <img
-              src={logo}
-              alt="Tegbar Digital Solution"
-              style={{ height: '40px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }}
-              className="group-hover:opacity-90 transition-opacity duration-200"
-            />
+            <div
+              style={{
+                background: darkMode ? 'transparent' : '#0D1925',
+                borderRadius: '8px',
+                padding: darkMode ? '0' : '4px 10px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                transition: 'all 0.2s',
+              }}
+            >
+              <img
+                src={logo}
+                alt="Tegbar Digital Solution"
+                style={{
+                  height: '36px',
+                  width: 'auto',
+                  maxWidth: '150px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
+                className="group-hover:opacity-90 transition-opacity duration-200"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
