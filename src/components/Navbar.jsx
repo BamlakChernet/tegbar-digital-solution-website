@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, Languages } from 'lucide-react';
-import logoLight from '../assets/logo-light.png';
-import logoDark from '../assets/logo-dark.png';
+import logo from '../assets/logo-light.png';
 import { useApp } from '../context/AppContext';
 
 export default function Navbar() {
@@ -27,10 +26,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo — swap asset based on theme, no filters or backgrounds */}
+          {/* Logo — single asset, consistent across all themes */}
           <Link to="/" className="flex items-center group">
             <img
-              src={darkMode ? logoLight : logoDark}
+              src={logo}
               alt="Tegbar Digital Solution"
               style={{ height: '40px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }}
               className="group-hover:opacity-90 transition-opacity duration-200"
