@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import logo from '../assets/logo-light.png';
+import logo from '../assets/logo.png';
 import { useApp } from '../context/AppContext';
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Tegbar Digital Solution"
-                style={{ height: '44px', width: 'auto', objectFit: 'contain', display: 'block', background: 'none' }}
+                style={{ height: '44px', width: 'auto' }}
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">{t('footer_desc')}</p>
